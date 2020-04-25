@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>corona-virus-data</title>
+    <style>
+      .fake-img{
+        background:#e9ecef;
+        width:400px;
+        margin:auto;
+        padding:1rem;
+        padding-bottom:0;
+      }
+      .badge-pill
+      {
+        padding:10px;
+        border-radius:1px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="fake-img">Corona-Virus Data</h1>
+    <div class="" style="height:70vh;">
+      <form method="POST" class="form-inline my-2 my-lg-0 d-flex justify-content-center align-item-center p-5">
+        {% csrf_token %}
+        <input name="country" class="form-control mr-sm-2" type="search" placeholder="Country" >
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+
+      <div class="fake-img">
+
+        <ul class="list-group">
+          {% if error %}
+            <p class="list-group-item d-flex text-center justify-content-between align-item-center">Please enter correct country</p>
+          {% else %}
+
+            <li class="list-group-item d-flex justify-content-between align-item-center">{{country}}Cases
+              <span class="badge badge-primary badge-pill">{{ cases }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-item-center">{{country}}Today Cases
+              <span class="badge badge-primary badge-pill">{{ today_cases }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-item-center">{{country}}Deaths
+              <span class="badge badge-primary badge-pill">{{ deaths }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-item-center">{{country}}Today Deaths
+              <span class="badge badge-primary badge-pill">{{ today_deaths }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-item-center">{{country}}Active Cases
+              <span class="badge badge-primary badge-pill">{{ active }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-item-center">{{country}}Serious
+              <span class="badge badge-primary badge-pill">{{ serious }}</span>
+            </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
