@@ -94,7 +94,8 @@ class apiOverview(generics.ListAPIView):
         api_urls = {
             'Api':'GET || Summary of World data',
             'Api/all':'GET || Data of all countries together',
-            'Api/countries':'GET || Summary of particular country'
+            'Api/countries':'GET || Summary of particular country',
+            'displaydata/':'Displays data of all countries',
             }
         a_urls=json.dumps(api_urls)
         data1 = {"Success": a_urls}
