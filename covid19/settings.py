@@ -25,7 +25,7 @@ SECRET_KEY = 'a05$z83cs7e5b4qlkd)iowaere(%t#_xwm9_cw$9rpa6pi-30+'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['coro-na-api.herokuapp.com']
 
 
 # Application definition
