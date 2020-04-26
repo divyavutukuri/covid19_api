@@ -1,1 +1,1 @@
-web: gunicorn django_project.wsgi
+web: gunicorn covid19.wsgi
