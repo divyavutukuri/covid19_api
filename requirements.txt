@@ -4,7 +4,7 @@ beautifulsoup4==4.8.0
 pip==20.0.2
 requests==2.22.0
 selenium==3.141.0
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 gunicorn==20.0.4
 pycountry==19.8.18
 
